@@ -36,7 +36,7 @@ gulp.task("prod", gulp.parallel("prod:scripts","prod:styles"));
 
 
 gulp.task('doc', function (cb) {
-    gulp.src(['README.md', './src/js/*.js'], {read: false})
+    gulp.src(['README_doc.md', './src/js/*.js'], {read: false})
         .pipe($.jsdoc3(cb));
 });
 
