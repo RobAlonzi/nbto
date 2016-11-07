@@ -1,0 +1,33 @@
+/* SITE COLOURS */
+$dark : #333;
+$purple : #8700cf;
+$purpleDark: #4d00ac;
+$white: #FFF;
+$lightGrey: #EEE;
+$mediumGrey: #7c7c7c;
+$black: #000;
+$yellow: #FFCC00;
+
+
+/* CURATOR COLOURS */
+$independentProject: #ED1C24;
+$curator1: #33B44A;
+$curator2: #2CA7CD;
+$curator3: #3A5379;
+$curator4: #EC008C;
+$sponsorProj: #F26722;
+$majorInstitutions: #6C2E7D;
+
+/* Resource mapping to curator number */
+
+$resourceIds: (
+  145: $curator4,
+  146: $curator1,
+  147: $curator2,
+  262: $curator3,
+  240: $sponsorProj,
+  284: $majorInstitutions,
+  231: $independentProject
+);
+
+

@@ -1,0 +1,45 @@
+.sponsor-section{
+	text-align: center;
+	margin:40px 0;
+
+	h2{
+		margin:0 0 15px;
+		line-height: initial;
+	}
+
+	& > div{
+		display: inline-block;
+
+		img{
+			max-width: 95%;
+			margin:10px 0;
+		}
+	}
+
+	.one-wide{
+		width:100%;
+	}
+
+	.two-wide{
+		width:49.25%;
+	}
+
+	.three-wide{
+		width:32.35%;
+
+		@include bp_760{
+			width:100%;
+		}
+	}
+
+	.six-wide{
+		width:15.45%;
+
+		@include bp_760{
+			width:49.25%;
+		}
+	}
+}
+
+
+

@@ -1,0 +1,38 @@
+/* RESETS */
+@import 'vendor/normalize';
+
+/* VENDOR */
+@import 'vendor/ionicons/ionicons';
+@import 'vendor/slick';
+@import 'vendor/slick-theme';
+
+/* UTILS */
+@import 'utils/mixins';
+@import 'utils/variables';
+
+/* COMMON */
+@import 'common/general';
+@import 'common/header';
+@import 'common/footer';
+
+
+/* PAGES */
+@import 'pages/home';
+@import 'pages/content';
+@import 'pages/projectDetails';
+@import 'pages/map';
+@import 'pages/programGuide';
+@import 'pages/indexList';
+
+/* PARTIALS -- NEW */
+@import 'partials/tiles';
+@import 'partials/filters';
+@import 'partials/gallery';
+@import 'partials/curator';
+
+/* PARTIALS -- OLD */
+@import 'partials/main.snb';
+@import 'partials/travel';
+@import 'partials/sponsors_partners';
+
+

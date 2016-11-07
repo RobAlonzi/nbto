@@ -1,0 +1,40 @@
+.featurebox_large_gallery  {
+	width: 48%; 
+	display: block; 
+	float:left; 
+	margin-top: 10px; 
+	@include bp_1024 {
+		width: 47%; 
+		max-height: 315px;
+		overflow:hidden; 
+	}	
+ 	@include bp_760 {
+		width: 99%; 
+		max-height: 600px;
+		float: none; 
+		clear: left; 
+		margin-top: 1em; 
+	}
+	@include bp_480 {
+		height: 280px;
+	}
+}
+
+/* slick title bar */
+
+div#slickimage {
+	span.imageCaption {
+	    position: absolute;
+		overflow: hidden;
+	    bottom: 0%;
+	    color: white;
+		padding: 8px 14px;
+		background: $dark;
+		width: 100%;
+  		min-height: 40px;
+  		@include bp_1024 {
+  			display: none;
+  		}
+	}
+}
+

@@ -1,0 +1,224 @@
+#skip-to-content:focus{ 
+	width:auto; 
+	height:auto;
+	left:0;
+	top:0;
+}
+
+
+#header-main{
+	margin-top:10px;
+
+	.logo-container{
+
+		@include bp_760{
+			padding-bottom:0;
+			border-bottom: 0;
+		}
+
+		a{
+			display: block;
+		}
+
+		a.logo {
+			img {
+				@include bp_360 {
+				 width:70%
+				}
+			}
+		}
+
+		#a_menubtn{
+			padding: 10px; 
+			color: #ffffff; 
+			text-decoration: none;
+			position: absolute;  
+			background-color:#333333; 
+			border: 1px solid #333333; 
+			border-radius: 0.3em; 
+			right: 10px; 
+			top: 29px; 
+			display: none;
+
+
+			@include bp_760{
+				display: block;
+			}
+		}
+	}
+
+	.bar {
+	    clear:both;
+		height: 5px;
+		margin-top: 30px;
+		background: $dark;
+
+		@include bp_760{
+			margin-top:10px;
+		}
+	}
+
+	#hashtag {
+	    float: right;
+	    font-size: 24px;
+	    font-weight: bolder;
+	    color: $dark;
+		@include bp_760{
+			display: none;
+		}
+    }
+
+	#nav-main{
+		margin-top:5px;
+		float: left;
+
+		@include bp_760{
+			margin-top:0;
+			float: none;
+		}
+
+		ul.nav {
+			ul{
+				position: absolute;
+				top: 1.2em;
+				left: -9999px;
+				opacity: 0;
+				min-width: 150px;
+				background: #EEE;
+				border:1px solid #CCC;
+				z-index: 10;
+
+				li{
+					float: none;
+					position: static;
+					padding:5px 10px;
+					border-bottom:1px solid #CCC;
+
+					&:after{
+						content: "";
+						margin:0;
+						border-right:0;
+					}
+
+					a{
+						float: none;
+						display: block;
+						color: #222;
+						font-size:0.9em;
+
+						&:hover, &:focus{
+							color: $purple;
+						}
+					}
+
+					&:last-of-type{
+						border-bottom:0;
+					}
+
+				}
+			}
+
+			li{
+				float: left;
+				position: relative;
+
+				& > a{
+					float: left;
+					color: #222;
+					font-size:1.15em;
+					text-decoration: none;
+
+					&:hover, &:focus{
+						color: $purple;
+					}
+				}
+
+				&.active > a {
+					color:$purple;
+				}
+
+				&:focus, &:hover{
+
+					& > a{
+						color: $purple;
+					}
+
+					ul, ul.show-menu{
+						left: 0;
+						opacity: 1;
+					}
+					
+				}
+
+				&:after{
+					content: "";
+					margin: 5px 10px;
+					border-right:1px solid $dark;
+				}
+
+				&:last-of-type:after{
+					margin:0;
+					border-right: 0;
+				}
+
+				ul.show-menu{
+					left:0;
+					opacity: 1;
+				}
+			}
+
+			@include bp_760{
+				display: none;
+			}
+		}
+
+
+		ul.nav-mobile{
+			background-color: $dark;
+			border-radius: 0.3em;
+			border: 1px solid #333;
+			display: none;
+
+			li{
+				border-bottom: 2px solid #FFF;
+				display: block;
+
+				&:last-of-type{
+					border-bottom:0;
+				}
+
+
+				a{
+					color: #FFF;
+					padding: 2%;
+					display: block;
+					width:96%;
+					font-size:1em;
+					text-decoration: none;
+				}
+
+			}	
+		}
+	}
+
+	@include bp_760{
+		&.navmenu_show{
+			#nav-main{
+				margin-top:20px;
+			}
+
+			ul.nav{
+				display: none;
+			}
+
+			ul.nav-mobile{
+				display: block !important;
+			}
+		}
+	}
+
+	
+}
+
+
+

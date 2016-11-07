@@ -1,0 +1,243 @@
+#map-container{
+	padding:15px;
+	border: 1px solid $lightGrey;
+	margin-top:10px;
+}
+
+#js-map-container{
+	height: 500px;
+	clear:both;
+
+	.map-marker{
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		background-color: $independentProject;
+		color:$white;
+
+		// &:hover, &:focus{
+		// 	border:2px solid red;
+		// 	z-index:99;
+		// }
+
+		&.independent-project{
+			border-radius: 50%;
+		}
+
+		&.major-institutions{
+			border-radius: 50%;
+			background-color: $majorInstitutions;
+		}
+
+		&.commissioned-project{
+
+			&.zone-1{
+				background-color: $curator1;
+			}
+
+			&.zone-2{
+				background-color: $curator2;
+			}
+
+			&.zone-3{
+				background-color: $curator3;
+			}
+
+			&.zone-4{
+				background-color: $curator4;
+			}
+		}
+
+		&.sponsor-project{
+			background: none;
+			width: 0;
+			height: 0;
+			border-left: 14px solid transparent;
+			border-right: 14px solid transparent;
+			border-bottom: 28px solid $sponsorProj;
+
+				span{
+					position: relative;
+					top: 11px;
+					left: -7px;
+				}
+		} 
+
+		&.ldc{
+			border-radius: 50%;
+			background-color: $dark;
+			width: 40px;
+			height: 40px; 
+
+			span{
+				position: relative;
+				top: 12px;
+			}
+		}
+
+		&.star{
+			height:30px;
+			width:25px;
+			color:$yellow;
+			background:none;
+			position:relative;
+			top:5px;
+
+
+			span{
+				position: relative;
+				top:6px;
+				color:$dark;
+			}
+
+			&:before{
+				content: "\f2fc";
+	    		font-family: "Ionicons";
+	    		font-size:2.75em;
+	    		position:absolute;
+	    		left:0;
+	    		top:4px;
+	    		text-shadow: -1px 0 $dark, 0 1px $dark, 1px 0 $dark, 0 -1px $dark;
+			}
+		}
+	}
+}
+
+
+#project-details #js-map-container{
+	height:200px;
+	border:2px solid $lightGrey;
+}
+
+
+#legend, #mobile-legend{
+  margin:10px;
+  font-size:1em;
+  background: $white;
+  padding:10px;
+
+  h4{
+  	margin: 0 0 10px;
+  }
+
+  span{
+    display: block;
+
+    img{
+    	margin: 0 5px 0 10px;
+    }
+
+    &.legend-item{
+		&:before{
+			content: "";
+			padding:1px 7px;
+			margin: 0 5px 0 10px;
+			background-color:$independentProject;
+		}
+
+		&.independent-project:before{
+			border-radius: 50%;
+		}
+
+		&.major-institutions:before{
+			border-radius: 50%;
+			background-color: $majorInstitutions;
+		}
+
+		&.curator1:before{
+			background-color: $curator1;
+		}
+
+		&.curator2:before{
+			background-color: $curator2;
+		}
+
+		&.curator3:before{
+			background-color: $curator3;
+		}
+
+		&.curator4:before{
+			background-color: $curator4;
+		}
+
+		&.sponsor-project:before{
+			background: none;
+			padding:0;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-bottom: 14px solid $sponsorProj;
+			position: relative;
+			top:-15px;
+		}
+
+		&.star:before{
+			background:none;
+			content: "\f2fc";
+    		font-family: "Ionicons";
+			color:$yellow;
+			margin:0;
+			font-size:2.5em;
+			text-shadow: -1px 0 $dark, 0 1px $dark, 1px 0 $dark, 0 -1px $dark;
+		}
+    }
+  }
+}
+
+#legend{
+	@include bp_760 {
+		display: none;
+	}
+}
+
+#mobile-legend{
+	padding:0;
+	margin: 0 0 10px;
+	font-size:0.85em;
+	display: none;
+	span{
+		display: inline-block;
+		margin: 0 0 10px;
+		font-size:0.9em;
+	}
+}
+
+
+@include bp_760 {
+	
+	body#resource-id-257{
+		#mobile-legend{
+			display: block;
+		}
+	}
+
+}
+
+i.mobile-map{
+	font-size:4em;
+	cursor:pointer;
+} 
+
+/* color coding projects on individual map page */
+    h2 {
+    	&.independent-project a{
+    		color: $independentProject !important;
+    	}
+    	&.commissioned-project.zone-1 a{
+    		color: $curator1 !important;
+    	}
+    	&.commissioned-project.zone-2 a{
+    		color: $curator2 !important;
+    	}
+    	&.commissioned-project.zone-3 a{
+    		color: $curator3 !important;
+    	}
+    	&.commissioned-project.zone-4 a{
+    		color: $curator4 !important;
+    	}
+    	&.sponsor-project a{
+    	 	color: $sponsorProj !important;
+    	}
+		&.major-institutions a{
+			color: $majorInstitutions !important;
+		}
+    }

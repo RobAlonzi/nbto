@@ -1,0 +1,14 @@
+#travel-hotels {}
+#travel-hotels section.hotel{margin-bottom: 20px;}
+#travel-hotels section.hotel > h2.zone {color: #EF0509; border-bottom: 1px solid #ccc;}
+#travel-hotels section.hotel > div.right {float: right; width: 250px;}
+#travel-hotels section.hotel > div.right > div {width: 100%;}
+#travel-hotels section.hotel > div.right > div.logo {margin-bottom: 20px;}
+#travel-hotels section.hotel > div.right > div.logo > img {display: block; margin: 0 auto; max-width: 250px;}
+#travel-hotels section.hotel > div.right > div.photo > img {width: 100%;}
+#travel-hotels section.hotel > div.details {margin-right: 270px;}
+
+@media all and (max-width: 480px) {
+    #travel-hotels section.hotel > div.right {float: none;}
+    #travel-hotels section.hotel > div.details {margin-right: 0;}
+}

@@ -1,0 +1,156 @@
+#list-container{
+	@include clearfix;
+}
+
+.project-list-tile{
+	width:24%;
+	float:left;
+	margin:1% 1.33% 1% 0;
+	background: $independentProject;
+	text-decoration: none;
+	color:$white;
+	display: block;
+
+	&.commissioned-project.zone-1{
+		background: $curator1;
+
+		&:hover, &:focus{
+			background: darken($curator1, 5%);
+		}
+	}
+
+	&.commissioned-project.zone-2{
+		background: $curator2;
+
+		&:hover, &:focus{
+			background: darken($curator2, 5%);
+		}
+	}
+
+	&.commissioned-project.zone-3{
+		background: $curator3;
+
+		&:hover, &:focus{
+			background: darken($curator3, 5%);
+		}
+	}
+
+	&.commissioned-project.zone-4{
+		background: $curator4;
+
+		&:hover, &:focus{
+			background: darken($curator4, 5%);
+		}
+	}
+
+	&.sponsor-project{
+		background: $sponsorProj;
+
+		&:hover, &:focus{
+			background: darken($sponsorProj, 5%);
+		}
+	}
+
+	&.major-institutions{
+		background-color: $majorInstitutions;
+
+			&:hover, &:focus{
+				background: darken($majorInstitutions, 5%);
+			}
+		}
+
+	&:hover, &:focus{
+		text-decoration: none;
+		background: darken($independentProject, 5%);
+	}
+
+	&.last{
+		margin:1% 0;
+	}
+
+
+	h3{
+		div{
+			background:$white;
+			padding:2px 5px;
+			display: inline-block;
+			color:$dark;
+			font-size:0.75em;
+
+			&.independent-project,
+			&.major-institutions{
+				border-radius: 50%;
+			}
+
+			&.sponsor-project{
+				padding:0;
+				background: none;
+				margin-right:-15px;
+
+				span{
+					position: relative;
+					left:-22px;
+					top:3px;
+				}
+
+				&:before{
+					content:" ";	
+					border-left: 15px solid transparent;
+					border-right: 15px solid transparent;
+					border-bottom: 20px solid $white;
+					position:relative;
+					top:-18px;
+				}
+			}	
+		}
+	}
+
+	
+
+	@include bp_1024 {
+		width:48%;
+		margin: 1% 4% 1% 0;
+
+		&.even:not(.hide){
+			margin:1% 0;
+		}
+
+	}
+
+	.img-container{
+		background: url(/assets/components/Web/style/loading.gif);
+		background-repeat:no-repeat;
+		background-position:center;
+
+		img{
+			max-width:100%;
+			margin-bottom:10px;
+			border:1px solid $lightGrey;
+		}
+	}
+
+
+
+	h3{
+		margin: 0 0 10px 0;
+		font-size: 1em;
+		height:45px;
+		max-height: 45px;
+	}
+
+	p{
+		font-size: 0.9375em;
+		height:40px;
+		max-height: 40px;
+	}
+
+	h3, p{
+		padding: 0 15px;
+		overflow: hidden;
+	}
+
+	&.hide{
+		display: none !important;
+		visibility: hidden !important;
+	}
+}

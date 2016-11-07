@@ -1,0 +1,91 @@
+ul.slidenav { 
+	position: fixed; 
+	bottom: 40px; 
+	display: none; 
+	width: 100%; 
+	background-color: $white; 
+	z-index: 1001;
+	left: 0px;
+	padding: 10px 0 0 14px;
+	list-style-type: none;
+	@include bp_350 {
+		padding-left: 3px;
+	}
+	& > li {
+		background-color: $mediumGrey;
+		border: 1px solid $dark;
+		margin-bottom: 2px; 
+		margin-left: 3px;
+		padding-left: 0; 
+		width: 94%;
+		@include bp_350 {
+			margin-left:14px; 
+			width: 88%;
+		}
+		&:first-child {
+		    border-top-left-radius: 0.3em;
+		    border-top-right-radius: 0.3em;
+		}
+		&:last-child {
+	    	border-bottom-left-radius: 0.3em;
+    		border-bottom-right-radius: 0.3em;
+		}
+		a {
+			display: block;
+			width: 100%;
+			color: $white;
+			padding-left: 0.5em; padding-top: 9px; padding-bottom: 9px;
+			text-decoration: none;
+		}
+	}
+}
+
+#mobile_navbottom {
+	background-color: $white;
+    bottom: 0; 
+    width: 100%;
+    position: fixed; 
+    z-index: 1002;
+    text-align: center;
+
+    ul {
+    	list-style-type: none;
+        margin: 5px 0;
+
+    	li{
+    		display: inline-block;
+    		border: 0px solid $dark; 
+    		border-radius: 0.3em; 
+    		color: $white;  
+    		margin-left: 7px;
+            background-color: $dark; 
+            border-color:$dark;
+            padding:10px;
+
+    		&:first-child {
+    			margin-left: 0px;
+    		}
+    		a {
+    			color: #ffffff; 
+    			font-size: 14px; 
+    			text-decoration: none; 
+    			display: block;
+    			span {
+
+    			}
+    		} 
+    	}
+    }
+
+}
+
+/* color coding projects on art project page */
+nav.type-parent {
+	color: $white;
+	@each $resourceId, $value in $resourceIds {
+	  #rowId_#{$resourceId} {
+	    background-color: $value;
+	  }
+	}
+}
+

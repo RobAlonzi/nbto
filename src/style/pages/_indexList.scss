@@ -1,0 +1,141 @@
+ul.project-list{
+	padding:0;
+
+	li{
+		padding: 7px 0; 
+		margin: 0 !important; 
+		list-style-type: none !important;
+
+		&.odd{
+			background-color: #F4F3F3;
+		}
+
+		a{
+			display: block;
+			text-decoration: none;
+			padding-left: 5px;
+			vertical-align: text-top;
+			margin-left: 10px;
+		}
+		a:hover {
+			text-decoration: underline;
+			color: $purple;		
+		}
+	}
+
+	span{
+		&.map-number{
+			display: inline-block;
+			width: 40px;
+			margin-right: 10px;
+			text-align: right;	
+		}
+	}
+
+	&.artist-list{
+		margin:2em 0;
+	}
+}
+
+.filtered-list-wrapper {
+	margin-bottom: 2em; 
+	margin-top: 2em; 
+	clear: both;
+
+	& > h2{
+		margin: 0 0 20px; 
+	}
+}
+
+h5.project-list-headers{
+	padding-left: 5px; 
+	margin-left: 10px;
+
+	span.map-number{
+		display: inline-block;
+		width: 40px;
+		text-align: right;
+		margin-right: 10px;
+	}
+}
+
+
+
+/* 
+#mapCanvas {}
+#mapCanvas .marker-label {width: 16px; height: 16px; margin-left: -9px !important; margin-top: -16px !important; font-size: 10px; letter-spacing: -1px; font-weight: bold; line-height: 16px; text-align: center; color: white;}
+#mapCanvas .marker-label.independent {}
+#mapCanvas .marker-label.sponsor {}
+#mapCanvas .marker-label.mynight {width: 20px; margin-left: -10px !important; margin-top: 0px !important; background-color: #cc6600;}
+#mapCanvas .marker-label.city-hall {width: 25px; height:23px; padding-top:8px;  margin-left: -10px !important; margin-top: 0px !important; background: transparent url("/assets/components/SnbProject/images/background/preview/web/black_traingle_24x24.gif") center top no-repeat;}
+#mapCanvas .marker-label.open-call {width: 20px; margin-left: -10px !important; margin-top: 0px !important;}
+#mapCanvas .marker-label.commission {width: 20px; margin-left: -10px !important; margin-top: 0px !important;}
+#mapCanvas .marker-label.sponsor {background-color: #676767;} 
+#mapCanvas .marker-label.commission.zone-1 {background-color: #ee2622;}
+#mapCanvas .marker-label.commission.zone-2 {background-color: #5b6222;}
+#mapCanvas .marker-label.commission.zone-3 {background-color: #902088;}
+#mapCanvas .marker-label.commission.zone-4 {background-color: #009A8B;}
+#mapCanvas .marker-label.open-call.zone-1 {background-color: #ee2622;}
+#mapCanvas .marker-label.open-call.zone-2 {background-color: #5b6222;}
+#mapCanvas .marker-label.open-call.zone-3 {background-color: #902088;}
+#mapCanvas .marker-label.open-call.zone-4 {background-color: #009A8B;}
+#mapCanvas .marker-label.independent {background: transparent url(/assets/components/Web/images/icon/legend_red_black.png) top left no-repeat;}
+#mapCanvas .marker-label.greenp {background: transparent url(/assets/components/SnbProject/images/background/preview/web/gp_placemark.png) top left no-repeat;}
+#mapCanvas .marker-label.info {background: transparent url(/assets/components/Web/images/icon/legend_info.gif) top left no-repeat;}
+#mapCanvas .marker-info {width: 250px; max-height: 200px; overflow: auto;}
+#mapCanvas .marker-info .image {float: left; margin: 0 10px 10px 0;}
+#mapCanvas .marker-info p.title, #mapCanvas .marker-info p.artists, #mapCanvas .marker-info p.location {margin-top: 0; /*float: right; width: 140px;}
+
+.filters {font-size: 11px; width: 250px;  right: 0px;}
+.filters .dropdown-select {border: 1px solid black; padding: 2px 5px 0px 5px; background: #EBE9EA url(http://2011.scotiabanknuitblanche.ca/images/bt_open.gif) 100% 0px no-repeat; line-height: 15px; height: 15px; cursor: pointer; z-index:9000; position: relative;}
+.filters .dropdown-select.open {background: #ebe9ea url(http://2011.scotiabanknuitblanche.ca/images/bt_close.gif) 100% 0px no-repeat; }
+.filters .dropdown {display: none; width: 228px; margin: 0px;  z-index: 5000; padding: 10px; border: 1px solid black; border-top: 0; background-color: white;}
+.filters .dropdown .filter-item {margin-bottom: 5px; clear: both;}
+.filters .dropdown .filter-item input {float: left;}
+.filters .dropdown .filter-item span.icon {width: 16px; height: 16px; display: block; float: left; margin: 0 10px;}
+.filters .dropdown .filter-item span.label {float: left;}
+.filters .dropdown .filter-item.independent span.icon {background: transparent url("http://2011.scotiabanknuitblanche.ca/images/legend_iprojects.gif") 50% no-repeat;}
+.filters .dropdown .filter-item.mynight span.icon {background: #cc6600;}
+.filters .dropdown .filter-item.city-hall span.icon {background: #00aac3;}
+.filters .dropdown .filter-item.commission.zone-1 span.icon {background: #ee2622;}
+.filters .dropdown .filter-item.commission.zone-2 span.icon {background: #5b6222;}
+.filters .dropdown .filter-item.commission.zone-3 span.icon {background: #902088;}
+.filters .dropdown .filter-item.commission.zone-4 span.icon {background: #009A8B;}
+.filters .dropdown .filter-item.open-call.zone-1 span.icon {background: #ee2622;}
+.filters .dropdown .filter-item.open-call.zone-2 span.icon {background: #5b6222;}
+.filters .dropdown .filter-item.open-call.zone-3 span.icon {background: #902088;}
+.filters .dropdown .filter-item.open-call.zone-4 span.icon {background: #009A8B;}
+.filters .dropdown .filter-item.sponsor span.icon {background: transparent url("/assets/components/SnbProject/images/background/preview/web/small_black_triangle.gif") 50% no-repeat;}
+.filters .dropdown .filter-item.info-centre span.icon {background: transparent url("/assets/components/Web/images/icon/legend_info.gif") 50% no-repeat;}
+.filters .dropdown .filter-item.rest-area span.icon {background: transparent url("/assets/components/Web/images/icon/icon_food.gif") 50% no-repeat;}
+.filters .dropdown .filter-item.scotiabank-abm span.icon {background: transparent url("/assets/components/Web/images/icon/scotiabank_S.png") 50% no-repeat;}
+.filters .dropdown .filter-item.greenp span.icon {background: transparent url("/assets/components/SnbProject/images/background/preview/web/gp_placemark_legend.png") 50% no-repeat;}
+.filters .dropdown .filter-item.scotiabank-hub span.icon {background: transparent url("/assets/components/SnbProject/images/background/preview/web/scotiabank_hub_icon_sm.gif") 50% no-repeat;}
+.filters .dropdown .filter-item.chevrolet-hub span.icon {margin-left: 23px; background: transparent url("/assets/components/SnbProject/images/background/preview/web/chevrolet_hub_icon_sm.gif") 50% no-repeat;}
+.filters .dropdown .filter-item.timothys span.icon {margin-left: 23px; background: transparent url("/assets/components/Web/images/icon/orange_icon_sm.gif") 50% no-repeat;}
+.filters .dropdown .filter-item.nokia-capcoment span.icon { background: transparent url("/assets/components/SnbProject/images/background/preview/web/nokia_capmoment_icon_sm.gif") 50% no-repeat;}
+#section-body .filters .map_lengend_header {font-weight: bold; text-decoration: none;}
+
+
+.filtered-list-wrapper .filters {float: right; font-size: 11px; width: 250px;}
+/*.filtered-list-wrapper .filters .dropdown-select {border: 1px solid black; padding: 2px 5px 0px 5px; background: #EBE9EA url(http://2011.scotiabanknuitblanche.ca/images/bt_open.gif) 100% 0px no-repeat; line-height: 15px; height: 15px; cursor: pointer;}
+.filtered-list-wrapper .filters .dropdown-select {border: 1px solid black; padding: 2px 5px 0px 5px; background: #EBE9EA url(/assets/components/Web/images/button/bt_open.gif) 100% 0px no-repeat; line-height: 15px; height: 15px; cursor: pointer;}
+.filtered-list-wrapper .filters .dropdown-select.open {background: #ebe9ea url(http://2011.scotiabanknuitblanche.ca/images/bt_close.gif) 100% 0px no-repeat; }
+.filtered-list-wrapper .filters .dropdown {display: none; width: 228px; margin: 0px; position: absolute; z-index: 5000; padding: 10px; border: 1px solid black; border-top: 0; background-color: white;}
+.filtered-list-wrapper .filters .dropdown .filter-item {margin-bottom: 5px; clear: both;}
+.filtered-list-wrapper .filters .dropdown .filter-item label {clear: both;}
+.filtered-list-wrapper .filters .dropdown .filter-item input {float: left; margin-right: 10px;}
+.filtered-list-wrapper .filters .dropdown .filter-item span.icon {width: 16px; height: 16px; display: block; float: left; margin: 0 10px;}
+.filtered-list-wrapper .filters .dropdown .filter-item span.label {float: left;}
+.filtered-list-wrapper .filters .dropdown .filter-item.independent span.icon {background: transparent url("http://2011.scotiabanknuitblanche.ca/images/legend_iprojects.gif") 50% no-repeat;}
+
+#header-main #section-login {visibility: visible;}
+
+
+@media all and (max-width: 480px) {
+    .filtered-list-wrapper > h2 {margin-bottom: 0.6em; float: none;}
+    .filtered-list-wrapper .filters {float: none;}
+    #project-details div.left-column {width: 100%; float: none;  margin-right: 0;}
+    #project-details div.right-column {width: 100%; float: none;}
+}
+*/

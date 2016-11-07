@@ -1,0 +1,82 @@
+.pp-section-container{
+	margin-bottom:30px;
+
+	.program-guide-tile{
+		width:48%;
+		float:left;
+		margin: 0 2% 20px 0;
+
+		&:nth-of-type(2n){
+			margin: 0 0 20px;
+		}
+
+		a.title{
+			text-decoration: none;
+			margin: 0;
+			text-align: left;	
+		}
+
+		h3{
+			padding: 10px 5px;
+			margin:0 0 10px;
+			color:$white;
+			font-size: 1em;
+
+			/* These look weird because in MODX I only have index..and they wanted an order change */
+			&.curated-1{
+				background: $curator4;
+			}
+
+			&.curated-2{
+				background: $curator1;
+			}
+
+			&.curated-3{
+				background: $curator2;
+			}
+
+			&.curated-4{
+				background: $curator3;
+			}
+
+			&.non-curated-2{
+				background: $majorInstitutions;
+			}
+
+			&.non-curated-3{
+				background: $independentProject;
+			}
+
+			&.non-curated-1{
+				background: $sponsorProj;
+			}
+		}
+
+		img{
+			float:left;
+			width:36%;
+		}
+
+		p{
+			float: right;
+			width: 64%;
+			padding: 0 3%;
+			margin:0 0 10px;
+		}
+
+		a{
+			clear:both;
+			display: block;
+			text-align: right;
+			margin-right:25px;
+
+		}
+
+		@include bp_760{
+			width: 100%;
+			margin:0 0 20px;
+			float:none;
+		}
+	}
+}
+	

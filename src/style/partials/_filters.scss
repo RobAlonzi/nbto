@@ -1,0 +1,333 @@
+#map-view-btn, #list-view-btn{
+  border: 0;
+  background: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 10px;
+
+  &:hover, &:focus, &.active{
+    background: #EEE;
+    color:$purple;
+  }
+}
+
+.btn-container-programlist{
+  display: inline-block;
+
+  @include bp_760{
+    display: block;
+    margin: 30px 0;
+  }
+
+  span{
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+
+  span#seperator:after{
+      content: "|";
+      margin: 0 5px;
+  }
+}
+
+.btn-container-filterlist{
+  float:right;
+
+  @include bp_760{
+    float:none;
+    margin:10px 0;
+  }
+
+  #toggle-filters-btn{
+    background-color: #f0f0f0;
+    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    cursor: pointer;
+    background: #FFF;
+    float:right;
+    font-weight: bold;
+
+    @include bp_760{
+      float:none;
+    }
+
+    i{
+      margin-left:10px;
+    }
+  }
+
+}
+
+
+.content.filters-active{
+  position: relative;
+
+  .filter-container{
+    max-height: 0;
+    right: 0;
+    z-index: 1;
+    background: #EEE;
+    opacity:0;
+    visibility: hidden;
+    overflow: hidden;
+    top:67px;
+    transition: all 0.25s ease-out;
+
+    &.show-filters{
+      max-height: 500px;
+      visibility: visible;
+      opacity: 1;
+      height:auto;
+      transition: all 0.25s ease-in;
+    }
+
+    h3{
+      margin: 10px 0;
+    }
+
+    p{
+      margin: 5px 0;
+    }
+
+    .filter-group{
+      padding:5px;
+    }
+
+    [type="checkbox"]{
+
+      &:not(:checked), &:checked{
+        position: absolute;
+        left: -9999px;
+
+        & + label {
+          position: relative;
+          padding-left: 25px;
+          cursor: pointer;
+
+          &:before{
+            content: '';
+            position: absolute;
+            left:0; 
+            width: 17px; height: 17px;
+            border: 1px solid #aaa;
+            background: #f8f8f8;
+            border-radius: 3px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+          }
+
+          &:after{
+            content: '✔';
+            position: absolute;
+            top: 1px; left: 3px;
+            font-size: 18px;
+            line-height: 0.8;
+            color: #09ad7e;
+            transition: all .2s;
+          }
+
+        }
+
+        &:focus + label:before{
+          border: 1px dotted blue;
+        }
+      }
+
+      &:not(:checked)+ label:after{
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      &:checked + label:after{
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      &:disabled{
+        &:not(:checked) + label:before,
+        &:checked + label:before{
+          box-shadow: none;
+          border-color: #bbb;
+          background-color: #ddd;
+        }
+
+        &:checked + label:after{
+          color: #999;
+        }
+
+        & + label{
+          color: #aaa;
+
+          &:hover:before{
+            border: 1px solid #4778d9!important;
+          }
+        }
+      }
+
+    }
+
+    button {
+      background-color:$dark;
+      border:1px solid darken($dark, 5%);
+      cursor:pointer;
+      color:$white;
+      padding:5px 10px;
+      width:90%;
+      margin: 20px 10px 5px;
+
+      &:hover {
+        background-color:darken($dark, 5%);
+      }
+    }
+
+
+    &.drawer{
+      position:initial;
+      background: none;
+      font-size:0.85em;
+      padding:10px;
+      border:1px solid $lightGrey;
+      margin:10px 0;
+      border-radius: 10px;
+
+
+      .filter-group{
+        float:left;
+        margin-right:15px;
+
+
+        &:nth-of-type(3){
+          border-left:1px solid $lightGrey;
+          padding-left:30px;
+
+          @include bp_1024{
+            border-left:0;
+            border-top:1px solid $lightGrey;
+            padding:0;
+            clear:both;
+            margin-top:10px;
+          }
+        }
+
+
+        @include bp_760{
+          float:none;
+          margin:0;
+          clear:both;
+          padding:0;
+        }
+      }
+
+      button {
+        width: auto;
+        display: block;
+        margin: 0;
+
+        @include bp_760{
+          float:left;
+          margin: 0 0 20px;
+        }
+      }
+
+      i{
+        position: absolute;
+        top:85px;
+        right:15px;
+        font-size: 2em;
+        cursor: pointer;
+
+        @include bp_760{
+           float:right;
+           position: static;
+        }
+      }
+    }
+  }
+
+  #active-filter-list{
+
+    margin:15px 0;
+
+    button{
+      background: $dark;
+      padding: 2px 10px;
+      border:0;
+      margin:5px;
+      font-size:0.75em;
+      color:$white;
+      border-radius: 10px;
+      cursor: pointer;
+
+      &.zone1{
+        background: $curator1;
+
+        &:hover, &:focus{
+          background: darken($curator1, 5%);
+        }
+      }
+
+      &.zone2{
+        background: $curator2;
+
+        &:hover, &:focus{
+          background: darken($curator2, 5%);
+        }
+      }
+
+      &.zone3{
+        background: $curator3;
+
+        &:hover, &:focus{
+          background: darken($curator3, 5%);
+        }
+      }
+
+      &.zone4{
+        background: $curator4;
+
+        &:hover, &:focus{
+          background: darken($curator4, 5%);
+        }
+      }
+
+      &.independent-project{
+          background: $independentProject;
+
+          &:hover, &:focus{
+            background: darken($independentProject, 5%);
+          }
+      }
+
+      &.sponsor-project{
+          background: $sponsorProj;
+
+          &:hover, &:focus{
+            background: darken($sponsorProj, 5%);
+          }
+      }
+
+      &.major-institutions{
+          background: $majorInstitutions;
+
+          &:hover, &:focus{
+            background: darken($majorInstitutions, 5%);
+          }
+      }
+
+      &:hover, &:focus{
+        background: darken($dark, 5%);
+      }
+
+      &:after{
+        content: "\f405";
+        font-family: "Ionicons";
+        position:relative;
+        top:-4px;
+        right:-4px;
+      }
+
+    }
+  }
+
+}
+

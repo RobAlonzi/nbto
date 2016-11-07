@@ -1,0 +1,14 @@
+ .web-curator{
+ 	img{
+ 		float:left; 
+ 		margin-right:25px;
+ 		max-width: 100%;
+ 		height:auto;
+
+ 		@include bp_975{
+ 			float: none;
+ 			margin-right:0;
+ 			display: block;
+ 		}
+ 	}
+ }
